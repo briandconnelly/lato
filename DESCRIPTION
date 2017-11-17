@@ -1,0 +1,19 @@
+Package: lato
+Type: Package
+Title: Minimal and flexible 'ggplot2' themes using 'Lato' Typeface
+Version: 0.1.0
+Authors@R: c(person(family="Connelly", given="Brian", email="bdc@bconnelly.net",
+                    role=c("aut", "cre")))                                      
+Maintainer: Brian Connelly <bdc@bconnelly.net> 
+Description: Lato provides a set of minimal, yet highly-configurable themes for
+    'ggplot2' that aim to put the data front and center. The 'Lato' typeface
+    by Łukasz Dziedzic <http://www.latofonts.com> is included.
+License: MIT + file LICENSE
+Copyright: file inst/COPYRIGHT
+Encoding: UTF-8
+LazyData: true
+Imports:
+    extrafont,
+    ggplot2,
+    grid
+RoxygenNote: 6.0.1
