@@ -13,6 +13,20 @@ for you.**
 
 It will also be re-named.
 
+Installation
+------------
+
+This package is not ready for [CRAN](http://cran.r-project.org/) just
+yet, but you can use
+[devtools](http://cran.r-project.org/web/packages/devtools/index.html)
+to be wild and install install the latest and greatest development
+version. To do so:
+
+``` r
+if(!require("devtools")) install.packages("devtools")
+devtools::install_github("briandconnelly/lato") 
+```
+
 Example
 -------
 
