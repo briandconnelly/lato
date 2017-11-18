@@ -20,7 +20,7 @@ Example
 library(ggplot2)
 library(lato)
 
-ggplot(mtcars, aes(wt, mpg, color = as.factor(cyl) )) +
+p1 <- ggplot(mtcars, aes(wt, mpg, color = as.factor(cyl) )) +
     facet_grid(cyl ~ .) +
     geom_line() +
     geom_point() +
@@ -33,9 +33,19 @@ ggplot(mtcars, aes(wt, mpg, color = as.factor(cyl) )) +
         caption = "Source: Motor Trend"
     ) +
     theme_lato()
+
+p1
 ```
 
 <img src="README_figures/README-mtcars_example-1.png" width="672" />
+
+### Dark Mode
+
+``` r
+p1 + theme_lato_dark()
+```
+
+<img src="README_figures/README-mtcars_dark-1.png" width="672" />
 
 Contributer Code of Conduct
 ---------------------------

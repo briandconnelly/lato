@@ -1,4 +1,9 @@
 .onAttach <- function(libname, pkgname) {
+    # Check if fonts are installed.
+    if (!is_lato_imported()) {
+        packageStartupMessage("Warning: Lato fonts could not be found.")
+        packageStartupMessage("    Please run lato::import_lato() to install all necessary fonts.\n")
+    }
 
     # Modified from hrbrthemes package (https://github.com/hrbrmstr/hrbrthemes)
     if (getOption("lato.loadfonts", default = FALSE)) {
@@ -11,11 +16,5 @@
     }
     else {
         packageStartupMessage("To include Lato in PDFs, first run extrafont::loadfonts().")
-    }
-
-    # Check if fonts are installed.
-    if (!is_lato_imported()) {
-        packageStartupMessage("Warning: Lato fonts could not be found.")
-        packageStartupMessage("    Please use lato::import_lato() to install all necessary fonts.")
     }
 }

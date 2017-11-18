@@ -17,7 +17,7 @@ import_lato <- function() {
 
     message(
         sprintf(
-            "You should also install Lato fonts on your system.\nThey can be found in [%s]",
+            "\nYou should also install Lato fonts on your system.\nThey can be found in [%s]",
             lato_path
         )
     )

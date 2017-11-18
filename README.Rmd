@@ -31,7 +31,7 @@ It will also be re-named.
 library(ggplot2)
 library(lato)
 
-ggplot(mtcars, aes(wt, mpg, color = as.factor(cyl) )) +
+p1 <- ggplot(mtcars, aes(wt, mpg, color = as.factor(cyl) )) +
     facet_grid(cyl ~ .) +
     geom_line() +
     geom_point() +
@@ -44,6 +44,14 @@ ggplot(mtcars, aes(wt, mpg, color = as.factor(cyl) )) +
         caption = "Source: Motor Trend"
     ) +
     theme_lato()
+
+p1
+```
+
+### Dark Mode
+
+```{r mtcars_dark, message=FALSE, warning=FALSE}
+p1 + theme_lato_dark()
 ```
 
 ## Contributer Code of Conduct
