@@ -51,6 +51,7 @@
 #' @param aspect.ratio Aspect ratio for panels (no default)
 #'
 #' @return A named list containing ggplot2 theme information
+#' @import ggplot2
 #' @export
 #'
 #' @md
@@ -94,17 +95,6 @@ theme_lato <- function(base_family = "Lato Light", base_size = 12, base_color = 
                        legend.title.family = axis.title.family, legend.title.face = axis.title.face, legend.title.color = axis.title.color,
                        legend.text.family = axis.text.family, legend.text.face = axis.text.face, legend.text.color = axis.text.color,
                        aspect.ratio = NULL) {
-
-    # TODO: Argument for margins
-
-    # PARAMS:
-    # - size for text? meh.
-
-    # TODO: angle argument for axis text
-    # TODO: use font arguments - copy names from ipsum
-    # TODO: get fonts working for export to PDF
-    # TODO: doc: add links and instructions for fonts
-    # - include in package??
 
     r <- theme_minimal(
         base_size = base_size,
@@ -218,10 +208,12 @@ theme_lato <- function(base_family = "Lato Light", base_size = 12, base_color = 
         )
     )
 
+    # Draw a box around the legend -----
     if (legend.box) {
         r <- r + theme(legend.box.background = element_rect(color = grid.color, size = line_size))
     }
 
+    # Add a baseline -----
     if (baseline.x) {
         r <- r + theme(axis.line.x = element_line(size = line_size * 3, color = grid.color, lineend = "square"))
     }
@@ -230,12 +222,12 @@ theme_lato <- function(base_family = "Lato Light", base_size = 12, base_color = 
         r <- r + theme(axis.line.y = element_line(size = line_size * 3, color = grid.color, lineend = "square"))
     }
 
+    # Add a border around panels -----
     if (panel.border) {
         r <- r + theme(panel.background = element_rect(color = grid.color, size = panel.border.size))
     }
 
-
-    # Grid Settings -----------------------------------------------------------
+    # Grid Settings -----
     if(!grid.x) {
         r <- r + theme(panel.grid.major.x = element_blank())
     }
@@ -252,7 +244,7 @@ theme_lato <- function(base_family = "Lato Light", base_size = 12, base_color = 
         r <- r + theme(panel.grid.minor.y = element_blank())
     }
 
-    # Axis Tick Marks ---------------------------------------------------------
+    # Axis Tick Marks -----
     if (ticks.x) {
         r <- r + theme(axis.ticks.x = element_line(color = grid.color, size = line_size))
     }
@@ -261,11 +253,10 @@ theme_lato <- function(base_family = "Lato Light", base_size = 12, base_color = 
         r <- r + theme(axis.ticks.y = element_line(color = grid.color, size = line_size))
     }
 
-    # Set the panel aspect ratio ----------------------------------------------
+    # Set the panel aspect ratio -----
     if (!is.null(aspect.ratio)) {
         r <- r + theme(aspect.ratio = aspect.ratio)
     }
-
 
     r
 }

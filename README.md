@@ -2,7 +2,8 @@
 lato
 ====
 
-The goal of lato is to …
+**This package is in early development. It probably will not work well
+for you.**
 
 Example
 -------

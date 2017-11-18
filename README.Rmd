@@ -17,11 +17,12 @@ knitr::opts_chunk$set(
 
 # lato
 
-The goal of lato is to ...
+**This package is in early development. It probably will not work well for you.**
+
 
 ## Example
 
-```{r mtcars_example}
+```{r mtcars_example, message=FALSE}
 library(ggplot2)
 library(lato)
 
